@@ -12,7 +12,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Employee e =new Employee(2,"Ankur","male",94009);
+Employee e =new Employee("Ankur","male",94009);
 
 Configuration cfg =new Configuration().configure("hibernate.cfg.xml");
 SessionFactory sessionFactory=cfg.buildSessionFactory();
