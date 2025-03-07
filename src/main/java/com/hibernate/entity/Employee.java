@@ -6,13 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name="emp_name")
+@Entity
 
 public class Employee {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 private int id;
-	@Column(name="user_name")
 private String name;
 private String gender;
 private int salary;

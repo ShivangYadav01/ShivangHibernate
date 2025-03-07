@@ -18,7 +18,7 @@ public class HibernateConfiguration {
 	ps.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/sameer");
 	ps.put(Environment.JAKARTA_JDBC_USER,"root");
 	ps.put(Environment.JAKARTA_JDBC_PASSWORD, "root");
-	ps.put(Environment.HBM2DDL_AUTO, "create");
+	ps.put(Environment.HBM2DDL_AUTO, "update");
 	ps.put(Environment.SHOW_SQL, "true");
 	ps.put(Environment.FORMAT_SQL, "true");
 	
