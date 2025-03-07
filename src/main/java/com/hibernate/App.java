@@ -30,8 +30,16 @@ Employee e =new Employee("Ankur","male",94009);
 
 SessionFactory sessionfactory =new MetadataSources(new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build()).getMetadataBuilder().build().buildSessionFactory();
 Session session=sessionfactory.openSession();
-	session.save(e);
-	session.beginTransaction().commit();
+	//session.save(e);//It can be used with auto inc(generrator) does not give error.
+//Employee employee =session.get(Employee.class, 2);//get method give null if the element is not present.
+//System.out.println(employee);
+	
+	Employee employee =session.load(Employee.class, 2);
+	System.out.println(employee);
+	
+//	session.persist(e);//but it can not used with this.
+	//session.beginTransaction().commit();
+	sessionfactory.close();
 	}
 
 }
