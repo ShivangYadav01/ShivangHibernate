@@ -1,10 +1,23 @@
 package com.hibernate.entity;
 
 import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
+
+@NamedQuery(
+		name ="Employee.findEmployeeById",
+		query ="FROM Employee E WHERE E.id> :id"
+		)
+@NamedQuery(
+		name ="Employee.findByGender",
+		query ="SELECT e FROM Employee e WHERE e.gender =:gender "
+			)
+
+
 
 @Entity
 

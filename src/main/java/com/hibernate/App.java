@@ -46,11 +46,11 @@ Session session=sessionFactory.openSession();
 //sessionFactory.close();
 
 Transaction tx=session.beginTransaction();
-Query query=session.createQuery("update Employee set name=:n where id=:i ");
-query.setParameter("n", "Ankur");
-query.setParameter("i", 3);
-query.executeUpdate();
-tx.commit();
+//Query query=session.createQuery("update Employee set name=:n where id=:i ");
+//query.setParameter("n", "Ankur");
+//query.setParameter("i", 3);
+//query.executeUpdate();
+//tx.commit();
 
 //Query query=session.createQuery("delete from Employee where id =10 ");
 //query.executeUpdate();
@@ -63,6 +63,17 @@ tx.commit();
 //List list =query.list();
 //System.out.print(list);
 
+Query<Employee> query=session.createNamedQuery("Employee.findEmployeeById");
+query.setParameter("id","1");
+List<Employee> employees =query.getResultList();
+System.out.println(employees);
+
+Query<Employee> query1 =session.createNamedQuery("Employee.findByGender");
+query1.setParameter("gender","male");
+List<Employee> list =query1.getResultList();
+System.out.println(list);
+
+tx.commit();
 sessionFactory.close();
 
 	}
