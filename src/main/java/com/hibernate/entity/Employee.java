@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity(name="emp_name")
 
@@ -16,16 +17,22 @@ private int id;
 private String name;
 private String gender;
 private int salary;
+
+@Transient 
+private String state;
+
+
 public Employee() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Employee( String name, String gender, int salary) {
+public Employee( String name, String gender, int salary,String state) {
 	super();
 	//this.id = id;
 	this.name = name;
 	this.gender = gender;
 	this.salary = salary;
+	this.state=state;
 }
 public int getId() {
 	return id;

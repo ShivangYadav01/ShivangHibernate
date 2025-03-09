@@ -18,7 +18,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Employee e =new Employee("Subham","male",94009);
+Employee e =new Employee("Subham","male",94009,"UP");
 
 SessionFactory sessionFactory = HibernateConfiguration.getSessionFactory();
 
